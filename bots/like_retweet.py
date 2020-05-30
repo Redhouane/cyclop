@@ -77,5 +77,4 @@ def main(keywords):
 
 if __name__ == '__main__':
     args = keywords_parser.parse_args()
-    keywords = args.keywords
-    main(keywords)
+    main(args.keywords)
