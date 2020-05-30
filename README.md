@@ -27,7 +27,7 @@ These environment variables need to be named as follow:
 - `TWITTER_ACCESS_TOKEN_SECRET`
 
 ### Keywords entry
-You have to give your 10 keywords in the `cli-args.txt` a the root of the project. These keywords will be 
+You have to give keywords in the `cli-args.txt` a the root of the project. These keywords will be 
 gotten by the project command line interface.
 
 ### Run the bot
