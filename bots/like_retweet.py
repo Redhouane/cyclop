@@ -30,12 +30,19 @@ keywords_parser.add_argument('arg_11', help='a eleventh argument')
 
 
 class LikeRetweetListener(tweepy.StreamListener):
+    """
+    The stream listener class which allows to receive tweets from the stream.
+    """
     def __init__(self, api):
         super().__init__(api)
         self.api = api
         self.me = api.me()
 
     def on_status(self, tweet):
+        """
+        Like and Retweet tweets from the stream which matches filtering criteria applied by the stream object.
+        :param tweet: a given tweet from the stream
+        """
         logger.info(f"processing tweet id {tweet.id}")
 
         if tweet.in_reply_to_status_id is not None or tweet.user.id == self.me.id:
@@ -58,8 +65,12 @@ class LikeRetweetListener(tweepy.StreamListener):
                 logger.warning(e.reason)
             sleep(5)
 
-    def on_error(self, status):
-        logger.error(status)
+    def on_error(self, tweet):
+        """
+        Errors logging
+        :param tweet: a given tweet from the stream
+        """
+        logger.error(tweet)
 
 
 def main(keywords):
