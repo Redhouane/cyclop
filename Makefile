@@ -11,8 +11,5 @@ run-red-bot:
 bash-red-bot:
 	docker exec -it gamaken bash
 
-upgrade-red-bot-version:
-	bumpversion $(PART)
-
 reset-stack:
 	docker system prune --all --volumes
