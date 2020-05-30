@@ -15,18 +15,13 @@ keywords_parser = argparse.ArgumentParser(
     fromfile_prefix_chars='@'
 )
 
-# TODO: Make the parser getting a list of keywords from the 'cli-args.txt' file
-keywords_parser.add_argument('arg_1', help='a first argument')
-keywords_parser.add_argument('arg_2', help='a second argument')
-keywords_parser.add_argument('arg_3', help='a third argument')
-keywords_parser.add_argument('arg_4', help='a fourth argument')
-keywords_parser.add_argument('arg_5', help='a fifth argument')
-keywords_parser.add_argument('arg_6', help='a sixth argument')
-keywords_parser.add_argument('arg_7', help='a seventh argument')
-keywords_parser.add_argument('arg_8', help='a eighth argument')
-keywords_parser.add_argument('arg_9', help='a ninth argument')
-keywords_parser.add_argument('arg_10', help='a tenth argument')
-keywords_parser.add_argument('arg_11', help='a eleventh argument')
+keywords_parser.add_argument(
+    '-k', '--keywords',
+    nargs='+',       # one or more parameters to this switch
+    type=str,        # /parameters/ are strings
+    dest='keywords',     # store in 'list'
+    default=[],      # since we're not specifying required.
+)
 
 
 class LikeRetweetListener(tweepy.StreamListener):
@@ -82,5 +77,4 @@ def main(keywords):
 
 if __name__ == '__main__':
     args = keywords_parser.parse_args()
-    keywords = list(vars(args).values())
-    main(keywords)
+    main(args.keywords)
