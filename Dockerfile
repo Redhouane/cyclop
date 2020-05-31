@@ -17,4 +17,4 @@ RUN pip install pipenv
 RUN pipenv install --system --deploy --ignore-pipfile
 
 # run the bots program
-CMD ["python", "bots/like_retweet.py", "@cli-args.txt"]
+CMD ["python", "bots/like_retweet.py", "--keywords", "@my-cli-args.txt"]
