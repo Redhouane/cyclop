@@ -1,9 +1,9 @@
-# What is red-bot?
-`red-bot` is a full python implemented bot with the aim of identify tweets of interest in the Twitter stream, like and 
+# What is cyclop?
+`cyclop` is a full python implemented bot with the aim of identify tweets of interest in the Twitter stream, like and 
 retweet them. The tweets of interest are selected using a list of keywords given by you.
 
 # How to use it?
-To run `red-bot` you need three steps detailed in below sections:
+To run `cyclop` you need three steps detailed in below sections:
 1. Creating a Twitter developer account.
 2. Give the keywords used to identify tweets of interest.
 3. Run the bot. We recommends to use the docker container version of this bot which will let you run it with only two 
@@ -32,18 +32,18 @@ gotten by the project command line interface.
 
 ### Run the bot
 In the project's root directory:
-1. Build the docker container which will embed the bot program `docker build . -t red-bot`
+1. Build the docker container which will embed the bot program `docker build . -t cyclop`
 2. Run the built container
 ```
 docker run -it -e TWITTER_CONSUMER_KEY=${TWITTER_CONSUMER_KEY} \
  -e TWITTER_CONSUMER_SECRET=${TWITTER_CONSUMER_SECRET} \
  -e TWITTER_ACCESS_TOKEN=${TWITTER_ACCESS_TOKEN} \
  -e TWITTER_ACCESS_TOKEN_SECRET=${TWITTER_ACCESS_TOKEN_SECRET} \
- red-bot
+ cyclop
 ```
 
 ##### Remark:
 You can run this bot using the given `Makefile`:
-1. Build the container `make build-red-bot`
-2. Run the built container `run-red-bot`
+1. Build the container `make build-cyclop`
+2. Run the built container `run-cyclop`
 
